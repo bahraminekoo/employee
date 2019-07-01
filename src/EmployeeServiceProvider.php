@@ -29,26 +29,26 @@ class EmployeeServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        $this->loadRoutesFrom(__DIR__.'/src/routes/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
 
         $this->publishMigrations();
 
         $this->publishFactories();
 
-        $this->loadTranslationsFrom(__DIR__.'/src/resources/lang', 'paloit');
+        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'paloit');
 
-        $this->loadViewsFrom(__DIR__.'/src/resources/views', 'paloit');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'paloit');
 
         $this->publishes([
-            __DIR__.'/src/resources/css' => public_path('css'),
+            __DIR__.'/resources/css' => public_path('css'),
         ], 'public');
 
         $this->publishes([
-            __DIR__.'/src/resources/js' => public_path('js'),
+            __DIR__.'/resources/js' => public_path('js'),
         ], 'public');
 
         $this->publishes([
-            __DIR__.'/src/config/employee.php' => config_path('employee.php'),
+            __DIR__.'/config/employee.php' => config_path('employee.php'),
         ], 'config');
     }
 
@@ -60,7 +60,7 @@ class EmployeeServiceProvider extends ServiceProvider
 
     private function getMigrationsPath()
     {
-        return __DIR__ . '/src/database/migrations/';
+        return __DIR__ . '/database/migrations/';
     }
 
     private function publishFactories()
@@ -71,6 +71,6 @@ class EmployeeServiceProvider extends ServiceProvider
 
     private function getFactoriesPath()
     {
-        return __DIR__ . '/src/database/factories/';
+        return __DIR__ . '/database/factories/';
     }
 }
