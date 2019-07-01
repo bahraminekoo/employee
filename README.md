@@ -29,7 +29,7 @@ In laravel <=5.4  :
 
 add the line below to the **providers** array of the config/app.php configuration file :
 
-Bahraminekoo\Larauth\LarauthServiceProvider::class
+Bahraminekoo\Employee\EmployeeServiceProvider::class
 
 In laravel >=5.5 this service provider will be automatically added to the providers array .
 
@@ -40,108 +40,52 @@ run the following commands also in the laravel root directory respectively:
 
 php artisan vendor:publish --tag=migrations
 
-php artisan vendor:publish --tag=views
+php artisan vendor:publish --tag=factories
+
+php artisan vendor:publish --tag=public
+
+php artisan vendor:publish --tag=config
 
 php artisan migrate
 
 ```
 
-and then 
+In this application there is the ability (with form) to add new employees
+into the DB and app but in order to get you started faster I have provided
+related seeder , issue the commands below to seed your database : 
 
 ```
-set up your laravel mail server configs inside config/mail.php
+php artisan db:seed --class=Bahraminekoo\Employee\Database\Seeds\EmployeesTableSeeder
 ```
 
-Now we have three REST API that we can use for authentication purposes :
+##### Configuration
 
-1 - 
+in the config/employee.php there is an item "items_per_page" in order to 
+specifies how many items you want to show on each page in terms of pagination .
 
-    * [POST] /auth/register
-    
-    headers :
-    
-      Accept : application/json
-      Content-Type : application/json
-      
-    Request :
-       
-      {
-      	"email": "email@gmail.com",
-      	"password": "password"
-      }
+##### Logging 
 
-    Response :
-    
-    {
-        "status": true,
-        "message": [
-            "register successful, but can not send verification email, you should set up mail configuration in your laravel application"
-        ],
-        "data": {
-            "kind": "user",
-            "id": 7,
-            "email": "email@gmail.com",
-            "isVerified": 0
-        }
-    }
-    
-2 - 
+You are able to see the application logs in storage/logs folder of laravel 
+application .
 
-     this link should be inside the email inbox after registration
-     
-    *   [GET] /auth/verify-email/email@gmail.com/hash-string-value 
-    
-    headers : 
-    
-        Accept : application/json
-        Content-Type : application/json
-    
-    Request :
-    
-        none
-        
-    Response :
-    
-        {
-            "status": true,
-            "message": [
-                "activation successful, now you can log into your account"
-            ],
-            "data": {
-                "kind": "user",
-                "id": 7,
-                "email": "email@gmail.com",
-                "isVerified": 1
-            }
-        } 
-        
-3 - 
+##### Caching 
 
-    * [POST] /auth/login
-    
-    headers : 
-     
-       Accept : application/json
-       Content-Type: application/json
-       
-    Request :
-    
-        {
-        	"email": "email@gmail.com",
-        	"password": "password"
-        } 
-        
-    Response : 
-    
-        {
-            "status": true,
-            "message": [
-                "login successful"
-            ],
-            "data": {
-                "kind": "user",
-                "id": 7,
-                "email": "email@gmail.com",
-                "isVerified": 1
-            }
-        }                     
+This application uses caching in order to speed up the database queries . 
+
+##### Localization
+
+at the moment the default language for the package is english but there is the ability to 
+add as many language as you wish , the only thing that you should do is create another folder
+in resources/lang e.g resources/lang/de then create a php file named messages.php inside that 
+and put the related translations for that specific lang inside this file as a key-value array .
+
+##### Testing 
+
+Run the following commands to execute the related unit tests for this package :
+
+```
+phpunit packages/bahraminekoo/employee
+```
+
+
+

@@ -85,6 +85,16 @@ class EmployeeController extends Controller
     }
 
     /**
+     * show employee by id
+     * at the moment the method is used for test puposes
+     *
+     * @param $id
+     */
+    public function show($id) {
+
+    }
+
+    /**
      * show the form for editin specified employee
      *
      * @param $id
