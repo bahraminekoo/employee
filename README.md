@@ -81,7 +81,7 @@ and put the related translations for that specific lang inside this file as a ke
 
 ##### Testing 
 
-Run the following commands to execute the related unit tests for this package :
+Run the following command at the root of laravel application to execute the related unit tests for this package :
 
 ```
 phpunit packages/bahraminekoo/employee
