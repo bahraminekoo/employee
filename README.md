@@ -75,16 +75,18 @@ This application uses caching in order to speed up the database queries .
 ##### Localization
 
 at the moment the default language for the package is english but there is the ability to 
-add as many language as you wish , the only thing that you should do is create another folder
-in resources/lang e.g resources/lang/de then create a php file named messages.php inside that 
-and put the related translations for that specific lang inside this file as a key-value array .
+add as many language as you wish , if you need to override the English translation strings 
+in messages.php for the package, you should place a language file at:  
+resources/lang/bahraminekoo/employee/en/messages.php. Within this file, you should only define 
+the translation strings you wish to override. Any translation strings you don't override 
+will still be loaded from the package's original language file.
 
 ##### Testing 
 
 Run the following command at the root of laravel application to execute the related unit tests for this package :
 
 ```
-phpunit packages/bahraminekoo/employee
+phpunit vendor/bahraminekoo/employee
 ```
 
 
