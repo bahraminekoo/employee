@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'row' => 'Row',
+    'name' => 'Name',
+    'email' => 'email',
+    'doe' => 'Date of Employment',
+    'manager' => 'Manager',
+    'actions' => 'Actions',
+    'view' => 'view',
+    'edit' => 'edit',
+    'del' => 'del',
+    'start_date' => 'Start Date',
+    'end_date' => 'End Date',
+    'filter_by_manager' => 'Filter by Manager',
+    'employee_list' => 'employee list',
+    'none' => 'none',
+    'add_new_employee' => 'Add New',
+    'add' => 'Add',
+    'edit_employee' => 'Edit Employee',
+    'employees_list_for_manager' => 'Employees List for the Manager',
+    'end_date_less_than_start_date' => 'Error : end date is less than start date',
+    'search_result_for_date_range' => 'Search result for date range : ',
+    'employees' => 'employees',
+];

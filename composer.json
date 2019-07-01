@@ -1,0 +1,32 @@
+{
+  "name": "bahraminekoo/employee",
+  "description": "laravel-specific package aims to record and display information about employees",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Hossein Bahrami Nekoo",
+      "email": "ho.bahram@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.1.3"
+  },
+  "autoload": {
+    "classmap": [
+      "src/database/migrations",
+      "src/database/seeds",
+      "src/models"
+    ],
+    "psr-4": {
+      "Bahraminekoo\\Employee\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Bahraminekoo\\Employee\\EmployeeServiceProvider"
+      ]
+    }
+  }
+}
