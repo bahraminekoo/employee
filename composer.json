@@ -1,7 +1,8 @@
 {
   "name": "bahraminekoo/employee",
   "description": "laravel-specific package aims to record and display information about employees",
-  "license": "GPL",
+  "keywords": ["laravel", "employees"],
+  "license": "MIT",
   "authors": [
     {
       "name": "Hossein Bahrami Nekoo",
